@@ -1,5 +1,5 @@
 class BlogScrape::Category
-  
+  attr_accessor :name, :url
   def self.today
     #should return a bunch of Category
     puts <<-DOC.gsub /^\s*/,''
