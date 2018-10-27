@@ -31,6 +31,6 @@ class BlogScrape::CLI
 end
 
   def goodbye
-    "See you next time!"
+    puts "See you next time!"
   end
 end
