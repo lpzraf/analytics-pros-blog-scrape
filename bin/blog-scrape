@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-puts "hello world test"
+require './lib/blog_scrape'
+
+BlogScrape::CLI.new.call
