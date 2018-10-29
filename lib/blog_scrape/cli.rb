@@ -9,6 +9,7 @@ class BlogScrape::CLI
   
   def list_categories
     puts "Welcome to the Analytics Pros blog vault!"
+    puts "What would you like to learn today?" 
     # puts <<-DOC.gsub /^\s*/,''
     #   1. Advanced Filters
     #   2. AdWords
@@ -20,7 +21,7 @@ class BlogScrape::CLI
   def menu
     input = nil
     while input != "exit"
-      puts "What would you like to learn today? Enter a category number to get a list of articles, type list to get the categories list again or type exit to finish the program:"
+      puts "Enter a category number to get a list of articles. Type list to get the categories list again, or type exit to finish the program:"
       input = gets.strip.downcase
       case input
       when "1"

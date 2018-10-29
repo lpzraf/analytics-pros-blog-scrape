@@ -20,6 +20,5 @@ class BlogScrape::Category
     category_3.url = "https://www.analyticspros.com/blog/category/augmented-analytics/"
   
     [category_1,category_2,category_3]
-    #test
   end
 end
