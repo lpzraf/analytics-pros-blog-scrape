@@ -9,13 +9,9 @@ class BlogScrape::CLI
   
   def list_categories
     puts "Welcome to the Analytics Pros blog vault!"
-    puts "What would you like to learn today?" 
-    # puts <<-DOC.gsub /^\s*/,''
-    #   1. Advanced Filters
-    #   2. AdWords
-    #   3. Augmented Analytics
-    # DOC
+    puts "What would you like to learn today?\n " 
     @categories = BlogScrape::Category.today
+    puts ""
   end
   
   def menu
