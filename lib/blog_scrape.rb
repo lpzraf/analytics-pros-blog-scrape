@@ -1,3 +1,4 @@
+require "open-uri"
 require "nokogiri"
 require "pry"
 require_relative "./blog_scrape/version"
