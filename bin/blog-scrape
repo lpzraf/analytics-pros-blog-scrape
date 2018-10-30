@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/blog_scrape'
+require "bundler/setup"
+require "./lib/blog_scrape.rb"
+
 BlogScrape::CLI.new.call
