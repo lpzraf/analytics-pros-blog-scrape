@@ -30,7 +30,7 @@ class BlogScrape::CLI
         elsif input == "list"
         list_categories
       else
-        puts "Oops! What you typed does not exist, why don't you try a new number?"
+        puts "Oops! What you typed does not exist, why don't you try 'list' and a new number?"
       end
     end
   end
