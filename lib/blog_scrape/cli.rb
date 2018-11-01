@@ -21,7 +21,7 @@ class BlogScrape::CLI
   def menu
     input = nil
     while input != "exit"
-      puts "Enter a category number to get a list of articles. Type list to get the categories list again, or type exit to finish the program:"
+      puts "Enter a category number to get a list of articles. Type 'list' to get the categories list again, or type 'exit' to finish the program:"
       input = gets.strip.downcase
       
       if input.to_i > 0 
