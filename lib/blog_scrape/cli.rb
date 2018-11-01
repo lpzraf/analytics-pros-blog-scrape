@@ -7,6 +7,7 @@ class BlogScrape::CLI
     goodbye
   end
   
+  # why coding += 1 wont work below?
   def list_categories
     puts "Welcome to the Analytics Pros blog vault!"
     puts "What would you like to learn today?\n " 

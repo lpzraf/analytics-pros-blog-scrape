@@ -9,11 +9,12 @@ class BlogScrape::Category
     #go to AP, find categories, extract properties, instantiate categories
      
      categories = []
-     categories << self.scrape_ap_blog
+     categories << self.scrape_ap_blog_categories
+    # categories << self.scrape_ap_blog_posts
      
      categories
   end
-  def self.scrape_ap_blog
+  def self.scrape_ap_blog_categories
     doc = Nokogiri::HTML(open("https://www.analyticspros.com/blog/mobile/react-native-firebase-gtm-integration-installation/"))
     
     category = self.new
@@ -21,4 +22,14 @@ class BlogScrape::Category
     category
     # binding.pry
   end
+  
+  #   def self.scrape_ap_blog_posts
+  #   doc = Nokogiri::HTML(open("https://www.analyticspros.com/blog/mobile/react-native-firebase-gtm-integration-installation/"))
+    
+  #   category = self.new
+  #   category.name = doc.search("li.cat-item").text
+  #   category
+  #   # binding.pry
+  # end
+  
 end
