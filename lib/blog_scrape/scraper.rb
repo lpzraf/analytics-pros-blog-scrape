@@ -1,4 +1,0 @@
-class BlogScrape::Scraper
-  
-  
-end

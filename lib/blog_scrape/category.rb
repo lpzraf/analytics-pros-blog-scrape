@@ -1,5 +1,5 @@
 class BlogScrape::Category
-  attr_accessor :name, :category_url, :blog_post_name, :blog_post_url, :blog_post_description  
+  attr_accessor :name, :category_url, :post_name, :post_url, :post_description  
   
   @@all = []
   
@@ -17,9 +17,6 @@ class BlogScrape::Category
     doc.search("li.cat-item").each do |categ|
       category = self.new
       category.name = categ.text
-      category.category_url = categ.text
-      #decide what to do w the categories ive created
-      
     end
   end
 end
