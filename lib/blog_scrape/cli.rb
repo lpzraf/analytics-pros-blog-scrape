@@ -2,7 +2,7 @@
 
 class BlogScrape::CLI
   def call 
-    BlogScrape::Category.scrape_ap_blog_categories
+    BlogScrape::Category.scrape_categories
     list_categories
     menu
     goodbye
