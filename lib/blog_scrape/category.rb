@@ -1,19 +1,15 @@
 class BlogScrape::Category
   attr_accessor :name, :category_url, :blog_post_name, :blog_post_url, :blog_post_description  
   
+  @@all = []
   
-  # def self.today
-  #   #scrape AP's blog and return the categories
-  #   self.scrape_categories
-  # end
-   
-  # def self.scrape_categories
-  #   #go to AP, find categories, extract properties, instantiate categories
-  #   categories = []
-  #   categories << self.scrape_ap_blog_categories
-  #   categories
-  # end
-  
+  def initialize
+    @@all << self 
+  end
+
+  def self.all
+    @@all
+  end
   
   def self.scrape_ap_blog_categories
     doc = Nokogiri::HTML(open("https://www.analyticspros.com/blog/mobile/react-native-firebase-gtm-integration-installation/"))

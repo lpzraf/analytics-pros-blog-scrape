@@ -25,8 +25,9 @@ class BlogScrape::CLI
       input = gets.strip.downcase
       
       if input.to_i > 0 
-        the_category = @categories[input.to_i-1]
+        the_category = BlogScrape::Category.all[input.to_i-1]
         puts "#{the_category.name}"
+        puts 
         elsif input == "list"
         list_categories
       else
