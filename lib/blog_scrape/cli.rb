@@ -2,16 +2,16 @@
 
 class BlogScrape::CLI
   def call 
+    BlogScrape::Category.scrape_ap_blog_categories
     list_categories
     menu
     goodbye
   end
   
-  # why coding += 1 wont work below?
   def list_categories
     puts "Welcome to the Analytics Pros blog vault!"
     puts "What would you like to learn today?\n " 
-    @categories = BlogScrape::Category.today
+    @categories = BlogScrape::Category.all
     @categories.each.with_index(1) do |category, i|
       puts "#{i}. #{category.name}"
     end
