@@ -9,7 +9,11 @@ class BlogScrape::CLI
   end
   
   def list_categories
+    puts ""
+    puts "=========================================="
     puts "Welcome to the Analytics Pros blog vault!"
+    puts "=========================================="
+    puts ""
     puts "What would you like to learn today?\n " 
     @categories = BlogScrape::Category.all
     @categories.each.with_index(1) do |category, i|
