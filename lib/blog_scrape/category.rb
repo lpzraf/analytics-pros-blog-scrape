@@ -1,10 +1,10 @@
 class BlogScrape::Category
-  attr_accessor :name, :category_url, :post_name, :blog_post_url, :post_description  
+  attr_accessor :name, :url, :post_name, :blog_post_url, :post_description  
   
   @@all = []
   
   def initialize(name = nil, url = nil)
-    @name = name,
+    @name = name
     @url = url
     # @@all << self 
   end
@@ -22,9 +22,11 @@ class BlogScrape::Category
     categories = BlogScrape::Scrape.scrape_categories
     
     categories.css("li.cat-item").each do |categ|
+      # binding.pry
       category = self.new(
-        categ.css.text, 
-        "https://www.analyticspros.com/blog/mobile/react-native-firebase-gtm-integration-installation/#{categ.css("li.cat-item a").attribute("href").text}")
+        categ.text, 
+        "https://www.analyticspros.com/blog/mobile/react-native-firebase-gtm-integration-installation/#{categ.css("a").attribute("href").text}")
+      
     category.save
     end
   end
