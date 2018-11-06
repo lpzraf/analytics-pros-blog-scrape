@@ -1,6 +1,6 @@
 class BlogScrape::Scrape
   
-  def self.get_page
+  def self.scrape_cat_page
     Nokogiri::HTML(open("https://www.analyticspros.com/blog/mobile/react-native-firebase-gtm-integration-installation/"))
   end
   
