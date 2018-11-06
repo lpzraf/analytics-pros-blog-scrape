@@ -16,6 +16,8 @@ class BlogScrape::Category
     @@all << self
   end
   
+  
+  
     
   def self.create_categories
     categories = BlogScrape::Scrape.scrape_categories
@@ -25,7 +27,7 @@ class BlogScrape::Category
         categ.text, 
         "https://www.analyticspros.com/blog/mobile/react-native-firebase-gtm-integration-installation/#{categ.css("a").attribute("href").text}")
       
-     category.save
+    category.save
     end
   end
 end
