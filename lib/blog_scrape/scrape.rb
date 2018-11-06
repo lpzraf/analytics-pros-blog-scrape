@@ -5,7 +5,7 @@ class BlogScrape::Scrape
   end
   
   def self.scrape_categories
-    self.get_page.css("li.cat-item")
+    self.get_cat_page.css("li.cat-item")
   end
   
   def self.scrape_blog_post(url)
