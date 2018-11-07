@@ -40,6 +40,23 @@ class BlogScrape::CLI
       end
     end
   end
+  
+  def print_blog_post(category)
+    puts "\n"
+    puts "#{category.post_name}"
+    puts "\n"
+    puts "#{category.post_description}"
+    puts "\n"
+    puts "Read More: " + "#{museum.url}"
+    puts "\n"
+
+    more_categories?
+  end
+
+  def more_categories?
+    puts "To go back to the categories type 'menu' or 'exit' to finish for the day."
+    puts "\n"
+  end
 
   def goodbye
     puts "See you next time!"
