@@ -31,7 +31,9 @@ class BlogScrape::CLI
     input = nil
     while input != "exit"
       puts ""
-      puts "Enter a category number to get a list of articles and their URLs. Type 'list' to get the categories list again, or type 'exit' to finish the program:"
+      puts "Enter a category number to get a list of articles and their URLs."
+      puts ""
+      puts "Type 'list' to get the categories again, or 'exit' to finish the program:"
       puts ""
       puts ""
       input = gets.strip.downcase
