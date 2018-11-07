@@ -47,7 +47,7 @@ class BlogScrape::CLI
     puts "\n"
     puts "#{category.post_description}"
     puts "\n"
-    puts "Read More: " + "#{museum.url}"
+    puts "Read More: " + "#{category.post_url}"
     puts "\n"
 
     more_categories?
