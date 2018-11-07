@@ -40,34 +40,40 @@ class BlogScrape::CLI
         the_category = BlogScrape::Category.all[input.to_i-1]
         puts ""
         puts "#{the_category.name}"
-        puts "Link: " + "#{the_category.url}".colorize(:blue)
+        puts "Link: " + "#{the_category.url}"
         puts ""
         elsif input == "list"
         list_categories
       else
+        puts ""
         puts "Oops! What you typed does not exist, why don't you try 'list' and a new number?"
+        puts ""
       end
     end
   end
   
+  #its not working
   def print_blog_post(category)
-    puts "\n"
+    puts ""
     puts "#{category.post_name}"
-    puts "\n"
+    puts ""
     puts "#{category.post_description}"
-    puts "\n"
+    puts ""
     puts "Read More: " + "#{category.post_url}"
-    puts "\n"
+    puts ""
 
     more_categories?
   end
 
+  #its not working
   def more_categories?
     puts "To go back to the categories type 'menu' or 'exit' to finish for the day."
     puts "\n"
   end
 
   def goodbye
+    puts ""
     puts "See you next time!"
+    puts ""
   end
 end
