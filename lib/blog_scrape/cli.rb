@@ -36,7 +36,7 @@ class BlogScrape::CLI
       puts ""
       input = gets.strip.downcase
       
-      if input.to_i > 0 
+      if input.to_i > 0 && input.to_i <= BlogScrape::Category.all.length
         the_category = BlogScrape::Category.all[input.to_i-1]
         puts ""
         puts "#{the_category.name}"
