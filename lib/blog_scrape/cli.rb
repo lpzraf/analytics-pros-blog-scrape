@@ -2,11 +2,15 @@
 
 class BlogScrape::CLI
   def call 
-    BlogScrape::Category.create_categories
+    present_categories
     #BlogScrape::Scrape.scrape_categories
     list_categories
     menu
     goodbye
+  end
+  
+  def present_categories
+   BlogScrape::Category.create_categories
   end
   
   def list_categories
@@ -26,7 +30,7 @@ class BlogScrape::CLI
   def menu
     input = nil
     while input != "exit"
-      puts "Enter a category number to get a list of articles. Type 'list' to get the categories list again, or type 'exit' to finish the program:"
+      puts "Enter a category number to get a list of articles and their URLs. Type 'list' to get the categories list again, or type 'exit' to finish the program:"
       input = gets.strip.downcase
       
       if input.to_i > 0 

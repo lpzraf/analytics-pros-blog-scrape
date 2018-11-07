@@ -6,6 +6,9 @@ class BlogScrape::Category
   def initialize(name = nil, url = nil)
     @name = name
     @url = url
+    @post_name = post_name
+    @post_url = post_url
+    @post_description = post_description
   end
 
   def self.all
