@@ -40,7 +40,7 @@ class BlogScrape::CLI
         the_category = BlogScrape::Category.all[input.to_i-1]
         puts ""
         puts "#{the_category.name}"
-        puts "Link: ""#{the_category.url}"
+        puts "Link: " + "#{the_category.url}".colorize(:blue)
         puts ""
         elsif input == "list"
         list_categories
