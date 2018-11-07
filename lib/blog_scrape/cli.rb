@@ -30,13 +30,18 @@ class BlogScrape::CLI
   def menu
     input = nil
     while input != "exit"
+      puts ""
       puts "Enter a category number to get a list of articles and their URLs. Type 'list' to get the categories list again, or type 'exit' to finish the program:"
+      puts ""
+      puts ""
       input = gets.strip.downcase
       
       if input.to_i > 0 
         the_category = BlogScrape::Category.all[input.to_i-1]
+        puts ""
         puts "#{the_category.name}"
-        puts 
+        puts "Link: ""#{the_category.url}"
+        puts ""
         elsif input == "list"
         list_categories
       else
