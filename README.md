@@ -12,10 +12,10 @@ Check me out at ***www.rafaelopez.com***
 
 ## Installation
 
-Clone the repo to your machine:
-***git@github.com:lpzraf/analytics-pros-blog-scrape.git***
+Clone the repo from the following URL to your machine:
+***https://github.com/lpzraf/analytics-pros-blog-scrape***
 
-Move to the right directory performing the command below:
+Move to the right directory performing the following command:
 ***cd analytics-pros-blog-scrape***
 
 Type:
