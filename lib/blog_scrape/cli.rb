@@ -1,9 +1,8 @@
-# Our CLI controller: responsible for user interaction
+# The CLI is responsible for user interaction
 
 class BlogScrape::CLI
   def call 
     present_categories
-    #BlogScrape::Scrape.scrape_categories
     list_categories
     menu
     goodbye
@@ -31,7 +30,7 @@ class BlogScrape::CLI
     input = nil
     while input != "exit"
       puts ""
-      puts "Enter a category number to get a list of articles and their URLs."
+      puts "Enter a category number to get a copy/pastable URL!"
       puts ""
       puts "Type 'list' to get the categories again, or 'exit' to finish the program:"
       puts ""
@@ -56,25 +55,6 @@ class BlogScrape::CLI
     end
   end
   
-  #its not working
-  def print_blog_post(category)
-    puts ""
-    puts "#{category.post_name}"
-    puts ""
-    puts "#{category.post_description}"
-    puts ""
-    puts "Read More: " + "#{category.post_url}"
-    puts ""
-
-    more_categories?
-  end
-
-  #its not working
-  def more_categories?
-    puts "To go back to the categories type 'menu' or 'exit' to finish for the day."
-    puts "\n"
-  end
-
   def goodbye
     puts ""
     puts "See you next time!"

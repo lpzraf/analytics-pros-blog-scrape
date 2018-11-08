@@ -1,14 +1,11 @@
 class BlogScrape::Category
-  attr_accessor :name, :url, :post_name, :post_url, :post_description  
+  attr_accessor :name, :url  
   
   @@all = []
   
   def initialize(name = nil, url = nil)
     @name = name
     @url = url
-    # @post_name = post_name
-    # @post_url = post_url
-    # @post_description = post_description
   end
 
   def self.all
@@ -19,7 +16,6 @@ class BlogScrape::Category
     @@all << self
   end
   
-    
   def self.create_categories
     categories = BlogScrape::Scrape.scrape_categories
     
