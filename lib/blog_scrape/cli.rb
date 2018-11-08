@@ -44,8 +44,10 @@ class BlogScrape::CLI
         puts "#{the_category.name}"
         puts "Link: " + "#{the_category.url}"
         puts ""
-        elsif input == "list"
+      elsif input == "list"
         list_categories
+      elsif input == "exit"
+        break
       else
         puts ""
         puts "Oops! What you typed does not exist, why don't you try 'list' and a new number?"

@@ -6,9 +6,9 @@ class BlogScrape::Category
   def initialize(name = nil, url = nil)
     @name = name
     @url = url
-    @post_name = post_name
-    @post_url = post_url
-    @post_description = post_description
+    # @post_name = post_name
+    # @post_url = post_url
+    # @post_description = post_description
   end
 
   def self.all
@@ -19,8 +19,6 @@ class BlogScrape::Category
     @@all << self
   end
   
-  
-  
     
   def self.create_categories
     categories = BlogScrape::Scrape.scrape_categories
@@ -28,7 +26,8 @@ class BlogScrape::Category
     categories.css("li.cat-item").each do |categ|
       category = self.new(
         categ.text, 
-        "https://www.analyticspros.com/blog/mobile/react-native-firebase-gtm-integration-installation/#{categ.css("a").attribute("href").text}")
+        categ.css("a").attribute("href").text
+        )
       
     category.save
     end
