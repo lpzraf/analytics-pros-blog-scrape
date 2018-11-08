@@ -6,8 +6,9 @@ Nothing fancy, just a cool scraping exercise.
 
 ***Just a heads  up, I'm not associated with the company. As a marketer who wants to bridge the gap between analytics and web development, I did this project as part of my own learning and professional development.***
 
-Check them out at analyticspros.com
-Check me out at rafaelopez.com
+Check them out at ***analyticspros.com*** 
+
+Check me out at ***rafaelopez.com***
 
 ## Installation
 
