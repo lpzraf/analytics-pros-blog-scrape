@@ -1,35 +1,24 @@
-HELLO WORLD
 # Analytics::Pros::Blog::Scrape
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/analytics/pros/blog/scrape`. To experiment with that code, run `bin/console` for an interactive prompt.
+I've built a Command Line Interface (or CLI) where I'm scraping the Analytics Pros blog, one of my favorite places to read and learn about advanced digital analytics. Once you run the program, you'll instantly get a list of their blog categories. You can then type a number to get a copy/pastable URL that you can then paste on your preferred browser. 
 
-TODO: Delete this and the text above, and describe your gem
+Nothing fancy, just a cool scraping exercise.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Clone the repo below to your machine:
+git@github.com:lpzraf/analytics-pros-blog-scrape.git
 
-```ruby
-gem 'analytics-pros-blog-scrape'
-```
+Move to the right directory performing the command below:
+cd analytics-pros-blog-scrape
 
-And then execute:
+Type:
+./bin/blog-scrape
 
-    $ bundle
+...and thats it! 
 
-Or install it yourself as:
+Follow the program instructions and discover a bunch of insightful articles from one of the best analytics people out there. 
 
-    $ gem install analytics-pros-blog-scrape
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
