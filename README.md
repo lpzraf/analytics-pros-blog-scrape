@@ -1,8 +1,13 @@
-# Analytics::Pros::Blog::Scrape
+# Analytics Pros Blog Scrape
 
 I've built a Command Line Interface (or CLI) where I'm scraping the Analytics Pros blog, one of my favorite places to read and learn about advanced digital analytics. Once you run the program, you'll instantly get a list of their blog categories. You can then type a number to get a copy/pastable URL that you can then paste on your preferred browser. 
 
 Nothing fancy, just a cool scraping exercise.
+
+***Just a heads  up, I'm not associated with the company. As a marketer who wants to bridge the gap between analytics and web development, I did this project as part of my own learning and professional development.***
+
+Check them out at analyticspros.com
+Check me out at rafaelopez.com
 
 ## Installation
 
@@ -28,6 +33,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/'lpzra
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-## Code of Conduct
 
-Everyone interacting in the Analytics::Pros::Blog::Scrape project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'lpzraf'/analytics-pros-blog-scrape/blob/master/CODE_OF_CONDUCT.md).
