@@ -9,7 +9,7 @@ class BlogScrape::CLI
   end
   
   def present_categories
-   BlogScrape::Category.create_categories
+   BlogScrape::Scrape.create_categories
   end
   
   def list_categories
@@ -19,8 +19,8 @@ class BlogScrape::CLI
     puts "=========================================="
     puts ""
     puts "What would you like to learn today?\n " 
-    @categories = BlogScrape::Category.all
-    @categories.each.with_index(1) do |category, i|
+    
+    BlogScrape::Category.all.each.with_index(1) do |category, i|
       puts "#{i}. #{category.name}"
     end
     puts ""
@@ -39,6 +39,7 @@ class BlogScrape::CLI
       
       if input.to_i > 0 && input.to_i <= BlogScrape::Category.all.length
         the_category = BlogScrape::Category.all[input.to_i-1]
+        #now call something like Scrape.scrape_category_detail(the_category) if it hasn't been scraped yet
         puts ""
         puts "#{the_category.name}"
         puts "Link: " + "#{the_category.url}"

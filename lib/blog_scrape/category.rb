@@ -16,16 +16,4 @@ class BlogScrape::Category
     @@all << self
   end
   
-  def self.create_categories
-    categories = BlogScrape::Scrape.scrape_categories
-    
-    categories.css("li.cat-item").each do |categ|
-      category = self.new(
-        categ.text, 
-        categ.css("a").attribute("href").text
-        )
-      
-    category.save
-    end
-  end
 end
