@@ -23,6 +23,9 @@ class BlogScrape::Scrape
   
   def self.scrape_category_details(the_category)
     #Nokogiri on the_category.url
+    doc = Nokogiri::HTML(open(the_category))
+    
+    
   end
   
 end

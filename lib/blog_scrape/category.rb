@@ -1,5 +1,5 @@
 class BlogScrape::Category
-  attr_accessor :name, :url  
+  attr_accessor :name, :url, :post_name, :post_url, :post_author, :post_decsription  
   
   @@all = []
   
