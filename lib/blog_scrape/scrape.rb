@@ -25,6 +25,13 @@ class BlogScrape::Scrape
     #Nokogiri on the_category.url
     doc = Nokogiri::HTML(open(the_category))
     
+    post_name = doc.css("header.entry-header").text
+    post_url = doc.css("h1.page-title").text
+    post_author = doc.css("p.entry-author").text
+    post_decsription = doc.css("div.entry-excerpt").text 
+    
+     blog_post_data = {:post_name => post_name, :post_url => post_url, :post_author => post_author, :post_description => post_description}
+    blog_post_data
     
   end
   
