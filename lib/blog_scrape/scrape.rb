@@ -18,6 +18,7 @@ class BlogScrape::Scrape
         )
       
     category.save
+    binding.pry
     end
   end
   
@@ -28,14 +29,18 @@ class BlogScrape::Scrape
     post_name = doc.css("header.entry-header").text
     post_url = doc.css("a").attribute("href").text
     post_author = doc.css("p.entry-author").text
-    post_decsription = doc.css("div.entry-excerpt").text 
+    post_description = doc.css("div.entry-excerpt").text 
     
     blog_post_data = {
-       :post_name => post_name, 
-       :post_url => post_url, 
-       :post_author => post_author, 
-       :post_description => post_description}
+      :post_name => post_name, 
+      :post_url => post_url, 
+      :post_author => post_author, 
+      :post_description => post_description}
     
     blog_post_data
+    category.add_post_attributes(blog_post_data)
+    # the_category.post_name = post_name
+    
+    binding.pry
   end
 end

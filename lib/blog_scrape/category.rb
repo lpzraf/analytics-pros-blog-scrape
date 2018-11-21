@@ -16,4 +16,8 @@ class BlogScrape::Category
     @@all << self
   end
   
+  def add_post_attributes(blog_post_data)
+    blog_post_data.each {|key,value| self.send(("#{key}="),value)}
+  end
+  
 end
