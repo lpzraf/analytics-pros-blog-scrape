@@ -26,6 +26,8 @@ class BlogScrape::Scrape
     #Nokogiri on the_category.url
     doc = Nokogiri::HTML(open(the_category.url))
     
+    blog_post = doc.css("article.post").each
+    
     post_name = doc.css("header.entry-header").text
     post_url = doc.css("a").attribute("href").text
     post_author = doc.css("p.entry-author").text

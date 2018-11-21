@@ -1,5 +1,5 @@
 class BlogScrape::Category
-  attr_accessor :name, :url, :post_name, :post_url, :post_author, :post_description  
+  attr_accessor :name, :url 
   
   @@all = []
   
@@ -16,8 +16,8 @@ class BlogScrape::Category
     @@all << self
   end
   
-  def add_post_attributes(blog_post_data)
-    blog_post_data.each {|key,value| self.send(("#{key}="),value)}
-  end
+  # def add_post_attributes(blog_post_data)
+  #   blog_post_data.each {|key,value| self.send(("#{key}="),value)}
+  # end
   
 end
