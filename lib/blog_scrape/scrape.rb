@@ -18,7 +18,7 @@ class BlogScrape::Scrape
         )
       
     category.save
-    binding.pry
+    
     end
   end
   
@@ -38,9 +38,9 @@ class BlogScrape::Scrape
       :post_description => post_description}
     
     blog_post_data
-    category.add_post_attributes(blog_post_data)
+    the_category.add_post_attributes(blog_post_data)
     # the_category.post_name = post_name
     
-    binding.pry
+ 
   end
 end
