@@ -26,19 +26,20 @@ class BlogScrape::Scrape
     #Nokogiri on the_category.url
     doc = Nokogiri::HTML(open(the_category.url))
     
-    blog_post = doc.css("article.post").each
+    blog_post = doc.css("article.post")
+    blog_post.each do |post|
+      post_name = post.css("h2.entry-title").text.strip 
+      post_url = post.css("a").attribute("href").text.strip 
+      post_author = post.css("p.entry-author").text.strip 
+      post_description = post.css("div.entry-excerpt").text.strip 
     
-    post_name = doc.css("header.entry-header").text
-    post_url = doc.css("a").attribute("href").text
-    post_author = doc.css("p.entry-author").text
-    post_description = doc.css("div.entry-excerpt").text 
-    
-    blog_post_data = {
-      :post_name => post_name, 
-      :post_url => post_url, 
-      :post_author => post_author, 
-      :post_description => post_description}
-    
+      blog_post_data = {
+        :post_name => post_name, 
+        :post_url => post_url, 
+        :post_author => post_author, 
+        :post_description => post_description}
+    binding.pry
+    end
     blog_post_data
     the_category.add_post_attributes(blog_post_data)
     # the_category.post_name = post_name
