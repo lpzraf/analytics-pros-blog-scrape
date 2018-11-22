@@ -38,12 +38,10 @@ class BlogScrape::Scrape
         :post_url => post_url, 
         :post_author => post_author, 
         :post_description => post_description}
-    binding.pry
-    end
-    blog_post_data
-    the_category.add_post_attributes(blog_post_data)
-    # the_category.post_name = post_name
+        # binding.pry
+       blog_post_data
     
- 
+    # the_category.add_post_attributes(blog_post_data)
+  end
   end
 end

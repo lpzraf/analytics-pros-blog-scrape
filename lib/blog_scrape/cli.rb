@@ -12,6 +12,11 @@ class BlogScrape::CLI
    BlogScrape::Scrape.create_categories
   end
   
+  #method below added as a test
+  # def get_post_attributes(blog_post)
+  #   blog_post.add_post_attributes
+  # end
+  
   def list_categories
     puts ""
     puts "=========================================="
@@ -42,10 +47,11 @@ class BlogScrape::CLI
         #now call something like BlogScrape::Scrape.scrape_category_detail(the_category) if it hasn't been scraped yet
         
         BlogScrape::Scrape.scrape_category_details(the_category)
-        # binding.pry
+        
         puts ""
         puts "#{the_category.name}"
         puts "Link: " + "#{the_category.url}"
+        # puts "#{blog_post.post_name}"
         puts ""
       elsif input == "list"
         list_categories
@@ -58,6 +64,11 @@ class BlogScrape::CLI
       end
     end
   end
+  
+  #method below added as a test
+  # def print_post(blog_post)
+  #   puts "#{blog_post.post_name}"
+  # end
   
   def goodbye
     puts ""
