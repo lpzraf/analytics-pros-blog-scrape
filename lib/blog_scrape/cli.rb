@@ -53,7 +53,7 @@ class BlogScrape::CLI
         puts ""
         puts "#{the_category.name}"
         puts "Link: " + "#{the_category.url}"
-        puts "#{the_blog_post.post_name}"
+        # puts "#{the_blog_post.post_name}"
         puts ""
       elsif input == "list"
         list_categories
