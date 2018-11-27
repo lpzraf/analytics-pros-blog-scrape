@@ -46,8 +46,8 @@ class BlogScrape::CLI
         puts "#{the_category.name}"
         puts "Category Link: " + "#{the_category.url}"
         puts ""
-           x = BlogScrape::BlogPost.all.each do |post|
-            
+        
+        BlogScrape::BlogPost.all.each do |post|
             puts post.post_name.upcase
             puts " -->Author: " + post.post_author
             puts " -->Link: " + post.post_url
