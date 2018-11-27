@@ -29,7 +29,7 @@ class BlogScrape::CLI
   def menu
     input = nil
     while input != "exit"
-      puts ""
+      # puts ""
       puts "Enter a category number to get a copy/pastable URL!"
       puts ""
       puts "Type 'list' to get the categories again, or 'exit' to finish the program:"
@@ -45,15 +45,17 @@ class BlogScrape::CLI
         
         puts ""
         puts "#{the_category.name}"
-        puts "Link: " + "#{the_category.url}"
-        # puts "#{x}"
+        puts "Category Link: " + "#{the_category.url}"
         puts ""
-         x = BlogScrape::BlogPost.all.each do |post|
-         # binding.pry
-          puts "-->Blog Post: " + post.post_name
-          puts "   Author: " + post.post_author
-          puts "   URL: " + post.post_url
-        end
+           x = BlogScrape::BlogPost.all.each do |post|
+            
+            puts post.post_name.upcase
+            puts " -->Author: " + post.post_author
+            puts " -->Link: " + post.post_url
+            # puts "-->Description: " + post.post_description
+            puts ""
+          end
+        puts ""
       elsif input == "list"
         list_categories
       elsif input == "exit"
