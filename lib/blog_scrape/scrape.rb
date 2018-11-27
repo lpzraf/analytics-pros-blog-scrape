@@ -44,6 +44,7 @@ class BlogScrape::Scrape
      a_post = BlogScrape::BlogPost.new()
      a_post.add_post_attributes(blog_post_data)
      a_post.save
+     the_category.blog_posts << a_post
   end
   end
 end

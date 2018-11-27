@@ -39,15 +39,18 @@ class BlogScrape::CLI
       if input.to_i > 0 && input.to_i <= BlogScrape::Category.all.length
         the_category = BlogScrape::Category.all[input.to_i-1]
         #now call something like BlogScrape::Scrape.scrape_category_detail(the_category) if it hasn't been scraped yet
-        
+        # binding.pry
+        if the_category.blog_posts.length == 0 
         BlogScrape::Scrape.scrape_category_details(the_category)
-        
+        end
+        # binding.pry
         puts ""
         puts "#{the_category.name}"
         puts "Category Link: " + "#{the_category.url}"
         puts ""
         
-        BlogScrape::BlogPost.all.each do |post|
+        
+        the_category.blog_posts.each do |post|
             puts post.post_name.upcase
             puts " -->Author: " + post.post_author
             puts " -->Link: " + post.post_url
