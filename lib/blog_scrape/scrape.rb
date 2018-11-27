@@ -29,7 +29,7 @@ class BlogScrape::Scrape
     blog_post = doc.css("article.post")
     blog_post.each do |post|
       post_name = post.css("h2.entry-title").text.strip 
-      post_url = post.css("a").attribute("href").text.strip 
+      post_url = post.css("a").attribute("href").text.gsub("https://www.","").strip 
       post_author = post.css("p.entry-author").text.gsub("By ","").strip 
       post_description = post.css("div.entry-excerpt").text.strip 
     
@@ -39,7 +39,6 @@ class BlogScrape::Scrape
         :post_author => post_author, 
         :post_description => post_description}
       
-       binding.pry
        blog_post_data
     
      a_post = BlogScrape::BlogPost.new()

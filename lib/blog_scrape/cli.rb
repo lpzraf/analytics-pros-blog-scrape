@@ -12,11 +12,6 @@ class BlogScrape::CLI
    BlogScrape::Scrape.create_categories
   end
   
-  #method below added as a test
-  # def get_post_attributes(blog_post)
-  #   blog_post.add_post_attributes
-  # end
-  
   def list_categories
     puts ""
     puts "=========================================="
@@ -48,18 +43,17 @@ class BlogScrape::CLI
         
         BlogScrape::Scrape.scrape_category_details(the_category)
         
-        BlogScrape::BlogPost.all.each do |post|
-          puts post.post_name
-          
-        
-         
-        # the_blog_post = BlogScrape::BlogPost.add_post_attributes(the_category)
-        
         puts ""
         puts "#{the_category.name}"
         puts "Link: " + "#{the_category.url}"
-        puts "#{the_blog_post.post_name}"
+        # puts "#{x}"
         puts ""
+         x = BlogScrape::BlogPost.all.each do |post|
+         # binding.pry
+          puts "-->Blog Post: " + post.post_name
+          puts "   Author: " + post.post_author
+          puts "   URL: " + post.post_url
+        end
       elsif input == "list"
         list_categories
       elsif input == "exit"
@@ -71,11 +65,6 @@ class BlogScrape::CLI
       end
     end
   end
-  
-  #method below added as a test
-  # def print_post(blog_post)
-  #   puts "#{blog_post.post_name}"
-  # end
   
   def goodbye
     puts ""
