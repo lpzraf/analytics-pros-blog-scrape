@@ -39,10 +39,12 @@ class BlogScrape::Scrape
         :post_author => post_author, 
         :post_description => post_description}
       
-      # binding.pry
+       binding.pry
        blog_post_data
     
-    # the_category.add_post_attributes(blog_post_data)
+     a_post = BlogScrape::BlogPost.new()
+     a_post.add_post_attributes(blog_post_data)
+     a_post.save
   end
   end
 end

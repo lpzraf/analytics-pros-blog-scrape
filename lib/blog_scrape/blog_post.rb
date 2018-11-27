@@ -15,9 +15,9 @@ class BlogScrape::BlogPost
   #   blog_post_data.each {|key,value| self.send(("#{key}="),value)}
   # end
   
-  #method below added as a test
-  def add_post_attributes
-      BlogScrape::Scrape.scrape_category_details(self.the_category).each do |attribute, value|
+  #method below added as a test...should handle attributes for a single post not all of them
+  def add_post_attributes(attributes_hash)
+      attributes_hash.each do |attribute, value|
         self.send("#{attribute}=", value)
       end
   end
