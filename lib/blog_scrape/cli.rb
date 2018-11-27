@@ -46,14 +46,19 @@ class BlogScrape::CLI
         the_category = BlogScrape::Category.all[input.to_i-1]
         #now call something like BlogScrape::Scrape.scrape_category_detail(the_category) if it hasn't been scraped yet
         
-        # the_blog_post = BlogScrape::Scrape.scrape_category_details(the_category)
-        # or 
+        BlogScrape::Scrape.scrape_category_details(the_category)
+        
+        BlogScrape::BlogPost.all.each do |post|
+          puts post.post_name
+          
+        
+         
         # the_blog_post = BlogScrape::BlogPost.add_post_attributes(the_category)
         
         puts ""
         puts "#{the_category.name}"
         puts "Link: " + "#{the_category.url}"
-        # puts "#{the_blog_post.post_name}"
+        puts "#{the_blog_post.post_name}"
         puts ""
       elsif input == "list"
         list_categories
