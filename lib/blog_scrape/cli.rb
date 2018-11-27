@@ -1,5 +1,4 @@
 # The CLI is responsible for user interaction
-
 class BlogScrape::CLI
   def call 
     present_categories
@@ -70,7 +69,7 @@ class BlogScrape::CLI
   
   def goodbye
     puts ""
-    puts "See you next time!"
+    puts "See you next time!".upcase
     puts ""
   end
 end
