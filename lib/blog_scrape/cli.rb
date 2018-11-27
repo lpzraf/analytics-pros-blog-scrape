@@ -30,7 +30,7 @@ class BlogScrape::CLI
     input = nil
     while input != "exit"
       # puts ""
-      puts "Enter a category number to get a copy/pastable URL!"
+      puts "Enter a category number to get their blog posts!"
       puts ""
       puts "Type 'list' to get the categories again, or 'exit' to finish the program:"
       puts ""
