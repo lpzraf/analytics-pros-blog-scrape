@@ -28,7 +28,7 @@ class BlogScrape::CLI
   def menu
     input = nil
     while input != "exit"
-      # puts ""
+      
       puts "Enter a category number to get their blog posts!"
       puts ""
       puts "Type 'list' to get the categories again, or 'exit' to finish the program:"
@@ -39,24 +39,25 @@ class BlogScrape::CLI
       if input.to_i > 0 && input.to_i <= BlogScrape::Category.all.length
         the_category = BlogScrape::Category.all[input.to_i-1]
         #now call something like BlogScrape::Scrape.scrape_category_detail(the_category) if it hasn't been scraped yet
-        # binding.pry
-        if the_category.blog_posts.length == 0 
-        BlogScrape::Scrape.scrape_category_details(the_category)
-        end
-        # binding.pry
+    
+        BlogScrape::Scrape.scrape_category_details(the_category) if the_category.blog_posts.length == 0 
+  
         puts ""
-        puts "#{the_category.name}"
-        puts "Category Link: " + "#{the_category.url}"
+        puts "Category Name: #{the_category.name}".upcase
         puts ""
         
         
         the_category.blog_posts.each do |post|
-            puts post.post_name.upcase
-            puts " -->Author: " + post.post_author
-            puts " -->Link: " + post.post_url
-            # puts "-->Description: " + post.post_description
+            puts "-----------------------------------"
+            puts ""
+            puts post.post_name.upcase.colorize(:blue)
+            puts ""
+            puts " -->Author: ".colorize(:yellow) + post.post_author
+            puts " -->Link: ".colorize(:yellow) + post.post_url
+            puts " -->Description: ".colorize(:yellow) + post.post_description
             puts ""
           end
+        puts "-----------------------------------"
         puts ""
       elsif input == "list"
         list_categories
